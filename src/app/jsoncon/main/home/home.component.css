@@ -1,0 +1,37 @@
+*{
+    
+    box-sizing: border-box;
+}
+
+.head{
+    height: 5rem;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+
+}
+
+.main-row > *{
+
+    padding: 1rem;
+
+}
+
+.left-sec, .rightsec{
+    height: 70vh;
+}
+
+.mid-sec{
+    height: 40vh;
+}
+
+.card{
+    height: 100%;
+    padding: 0.5rem;
+}
