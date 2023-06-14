@@ -12,16 +12,15 @@ export class HomeComponent {
   pokemonArray = [];
   api_obj?: object;
   objJson: string = '';
+  pokemon_number = 1;
 
   constructor(private apiServe: ApiServiceService, private http: HttpClient) {}
 
   ngOnInit() {}
 
-  getPokemon(value: any) {
-    this.apiServe.getRawPokemon(value.value).subscribe((response) => {
-      this.api_obj = response;
-    });
-    this.apiServe.getPokemon(value.value).subscribe((response) => {
+  getPokemon(value: any ) {
+
+    this.apiServe.getPokemon(this.pokemon_number, value).subscribe((response) => {
       // this.objJson = JSON.stringify(response);
       this.objJson = response;
 
@@ -33,7 +32,17 @@ export class HomeComponent {
     });
   }
 
-  setFormatter() {
-    throw new Error('Method not implemented.');
+  getRawPokemon(value: any){
+    this.pokemon_number = value;
+
+    this.apiServe.getRawPokemon(value).subscribe((response) => {
+      this.api_obj = response;
+    });
+
+    console.log(value); 
+  }
+
+  setFormatter(value: any) {
+    console.log(value)
   }
 }

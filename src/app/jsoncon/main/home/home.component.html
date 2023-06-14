@@ -13,9 +13,9 @@
         id="exampleFormControlInput1"
         placeholder="1"
         value="1"
-        (keyup.enter)="getPokemon($event.target)"
+        #input
       />
-      <button class="btn btn-primary">Get Pokemon</button>
+      <button class="btn btn-primary" (click)="getRawPokemon(input.value)">Get Pokemon</button>
 
       <div class="card">
         <!-- <div class="card-body">
@@ -38,7 +38,7 @@
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
-      <button class="btn btn-primary" (click)="setFormatter()">Get Pokemon</button>
+      <button class="btn btn-primary" (click)="getPokemon(selectedVal.value)">Get Pokemon</button>
 
       </div>
     </div>
